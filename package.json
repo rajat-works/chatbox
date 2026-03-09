@@ -1,0 +1,18 @@
+{
+  "name": "corechat-by-corework",
+  "version": "1.0.0",
+  "description": "CoreChat - Real-time chat application by Corework",
+  "private": true,
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "dev:server": "cd server && npm run start:dev",
+    "dev:client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "build": "npm run build:server && npm run build:client"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

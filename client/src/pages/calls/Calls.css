@@ -1,0 +1,141 @@
+/* ========================================
+   Calls Page Styles
+   ======================================== */
+
+.calls-page {
+  width: 360px;
+  min-width: 320px;
+  max-width: 420px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
+}
+
+.calls__header {
+  padding: 16px 20px 8px;
+}
+
+.calls__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.calls__search {
+  padding: 8px 20px;
+}
+
+.calls__tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px 20px 12px;
+}
+
+.calls__tab {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: none;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.calls__tab--active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.calls__list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.calls__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 20px;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.calls__empty h3 {
+  color: var(--text-secondary);
+}
+
+.call-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.call-item:hover {
+  background: var(--bg-hover);
+}
+
+.call-item__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.call-item__name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.call-item__name--missed {
+  color: var(--error);
+}
+
+.call-item__meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.call-direction {
+  flex-shrink: 0;
+}
+
+.call-direction--outgoing {
+  color: var(--primary);
+}
+
+.call-direction--incoming {
+  color: var(--primary);
+}
+
+.call-direction--missed {
+  color: var(--error);
+}
+
+.call-item__time {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.call-item__duration {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .calls-page {
+    width: 100%;
+    max-width: 100%;
+    border-right: none;
+  }
+}

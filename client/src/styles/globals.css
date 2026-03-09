@@ -1,0 +1,236 @@
+/* ========================================
+   CoreChat Global Styles
+   Theme matching Figma: teal/dark green primary
+   ======================================== */
+
+:root {
+  /* Primary Colors - Teal/Green from Figma */
+  --primary: #0D7C66;
+  --primary-light: #10A37F;
+  --primary-dark: #095C4B;
+  --primary-bg: rgba(13, 124, 102, 0.1);
+
+  /* Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5F5F5;
+  --bg-tertiary: #EBEBEB;
+  --bg-chat: #F0F2F5;
+  --bg-sidebar: #FFFFFF;
+  --bg-header: #FFFFFF;
+  --bg-input: #F5F5F5;
+  --bg-hover: #F0F0F0;
+  --bg-active: #E8F5E9;
+
+  /* Text Colors */
+  --text-primary: #1A1A2E;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-inverse: #FFFFFF;
+
+  /* Message Bubbles */
+  --msg-sent-bg: #0D7C66;
+  --msg-sent-text: #FFFFFF;
+  --msg-received-bg: #F0F0F0;
+  --msg-received-text: #1A1A2E;
+
+  /* Status Colors */
+  --online: #22C55E;
+  --offline: #94A3B8;
+  --away: #F59E0B;
+
+  /* Borders */
+  --border-color: #E5E5E5;
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  /* Font */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --sidebar-width: 380px;
+  --header-height: 64px;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary: #10A37F;
+  --primary-light: #15C996;
+  --primary-dark: #0D7C66;
+  --primary-bg: rgba(16, 163, 127, 0.15);
+
+  --bg-primary: #111B21;
+  --bg-secondary: #1F2C34;
+  --bg-tertiary: #2A3942;
+  --bg-chat: #0B141A;
+  --bg-sidebar: #111B21;
+  --bg-header: #1F2C34;
+  --bg-input: #2A3942;
+  --bg-hover: #2A3942;
+  --bg-active: #1F3D35;
+
+  --text-primary: #E9EDEF;
+  --text-secondary: #8696A0;
+  --text-tertiary: #667781;
+  --text-inverse: #FFFFFF;
+
+  --msg-sent-bg: #005C4B;
+  --msg-sent-text: #E9EDEF;
+  --msg-received-bg: #1F2C34;
+  --msg-received-text: #E9EDEF;
+
+  --border-color: #2A3942;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fadeIn { animation: fadeIn 0.3s ease; }
+.animate-slideUp { animation: slideUp 0.3s ease; }
+.animate-slideIn { animation: slideIn 0.3s ease; }
+
+/* Toast overrides */
+.react-hot-toast {
+  font-family: var(--font-family) !important;
+}
